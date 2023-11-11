@@ -1,0 +1,1 @@
+This is a github repository for the ALX SE's simple_shell group project.
