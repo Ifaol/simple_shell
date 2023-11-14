@@ -4,6 +4,7 @@
  *@args: array of pointers of user input
  *@i: int value for builtin funcs
  *@count: no of command count
+ *@argv: input string array
  *
  *Return: -1 on sucessful and o else
  */
