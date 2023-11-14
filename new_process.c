@@ -14,7 +14,7 @@ int status, state = 0;
 char *path = NULL;
 if (_strncmp(args[0], "./", 2) == 0)
 state = 1;
-if (((_strncmp(args[0], "/bin", 4) == 0) || state == 1) && (command_ch == 0))
+if ((_strncmp(args[0], "/bin", 4) == 0) || (state == 1))
 {
 return (new_process_two(args, argv, count));
 }
