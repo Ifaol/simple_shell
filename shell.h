@@ -52,5 +52,4 @@ int is_space(char c);
 int convert_2range(int num);
 int get_status(void);
 int get_status_non(void);
-char *_getline(void);
 #endif
