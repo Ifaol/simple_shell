@@ -10,7 +10,7 @@ void non_interactive(char **argv)
 {
 char *line;
 char **args;
-int count = 1;
+int count = 1, i = 0, j = 0;
 status_non = 0;
 do {
 line = read_line();
@@ -25,6 +25,18 @@ free(line);
 else
 {
 args = split_line(line, " \n\t;|&'\"`(){}><");
+for (i = 0 ; args[i] != NULL ; i++)
+{
+if (_strncmp(args[i], "#", 1) == 0)
+{
+for (j = i ; args[j] != NULL ; j++)
+{
+free(args[j]);
+args[j] = NULL;
+}
+break;
+}
+}
 status_non = execute_command(args, argv, count);
 }
 } while (1);

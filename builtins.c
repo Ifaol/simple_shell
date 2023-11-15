@@ -21,6 +21,8 @@ return (0);
 /**
  *my_exit - a function that exites the shell
  *@args: a double pointer input of command and argumentes
+ *@count: no of commands executed
+ *@argv: input strings array
  *
  *Return: void
  */

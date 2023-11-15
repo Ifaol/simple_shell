@@ -9,7 +9,7 @@ static int status;
 void interactive(char **argv)
 {
 char *line = NULL, **args = NULL;
-int count = 0;
+int count = 0, i = 0, j = 0;
 status = 0;
 do {
 count++;
@@ -27,6 +27,18 @@ free(line);
 else
 {
 args = split_line(line, " \n\t;|&'\"`(){}><");
+for (i = 0 ; args[i] != NULL ; i++)
+{
+if (_strncmp(args[i], "#", 1) == 0)
+{
+for (j = i ; args[j] != NULL ; j++)
+{
+free(args[j]);
+args[j] = NULL;
+}
+break;
+}
+}
 status = execute_command(args, argv, count);
 }
 } while (1);

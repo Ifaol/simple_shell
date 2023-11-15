@@ -7,8 +7,8 @@
 char *read_line(void)
 {
 char *line = NULL;
-size_t bufsize = 0;
-if (getline(&line, &bufsize, stdin) == -1)
+line = _getline();
+if (line == NULL)
 {
 if (feof(stdin))
 {
@@ -21,8 +21,6 @@ if (line != NULL)
 {
 free(line);
 }
-perror("error reading from stdin");
-exit(EXIT_FAILURE);
 }
 }
 return (line);
