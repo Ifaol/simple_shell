@@ -39,6 +39,9 @@ args[j] = NULL;
 break;
 }
 }
+if (args[0] == NULL)
+free(args);
+else
 status = execute_command(args, argv, count);
 }
 } while (1);
