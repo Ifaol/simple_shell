@@ -12,6 +12,12 @@ int new_process_two(char **args, char **argv, int count)
 pid_t pid;
 int status;
 char *path = args[0];
+if (access(path, X_OK) == -1)
+{
+print_error(argv, count, args);
+token_free(args);
+exit(127);
+}
 pid = fork();
 if (pid == 0)
 {
